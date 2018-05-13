@@ -1,0 +1,52 @@
+<form>
+		<mat-toolbar>
+				<mat-toolbar-row>
+					<label>S&P/ASX</label>
+					<span class="space"></span>
+					 <p (click)="getTopGainers()">TOP GAINERS</p>
+					 <p (click)="getTopLosers()">TOP LOSERS</p>
+				</mat-toolbar-row>
+		</mat-toolbar>
+
+		<div class="row form-group">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+				<label class="form-col-row head">Code</label>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<label class="form-col-row head">Company</label>
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				<label class="form-col-row head">Price</label>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<label class="form-col-row head">Value</label>
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" *ngIf="flag">
+				<label class="form-col-row head">Change</label>
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" *ngIf="flag">
+				<label class="form-col-row head">% Change</label>
+			</div>
+		</div>
+
+		<div class="row form-group" *ngFor="let index of data_arr">
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+				<label class="form-col-row code-content">{{ index.code }}</label>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<label class="form-col-row head">{{ index.company }}</label>
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				<label class="form-col-row price-value-cotent">{{ index.price }}</label>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<label class="form-col-row price-value-cotent">{{ index.value }}</label>
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+				<label class="form-col-row" [style.color]="index.color">{{ index.change}}</label>
+			</div>
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+				<label class="form-col-row" [style.color]="index.color">{{ index.change_percent}}</label>
+			</div>
+		</div>
+</form>

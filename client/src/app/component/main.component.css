@@ -1,0 +1,27 @@
+.space {
+    flex: 1 1 auto;
+  }
+  mat-toolbar{
+      background-color: #68c5ff;
+  }
+  mat-toolbar mat-toolbar-row label{
+      color: white;
+  }
+  mat-toolbar mat-toolbar-row p{
+    color: #d1d3d6;
+    margin-right: 5vw;
+  }
+  mat-toolbar mat-toolbar-row p:hover{
+    color:white;
+    text-decoration: underline;
+    text-decoration-color: red;
+  }
+  .head{
+      color: #969696;
+  }
+  .code-content{
+      color: blue;
+  }
+  .price-value-cotent{
+      color: black;
+  }
